@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#Aan Team Bot
 
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
@@ -8,246 +7,118 @@ from bs4 import BeautifulSoup
 import time, random, sys, re, os, json, subprocess, threading, string, codecs, requests, tweepy, ctypes, urllib, urllib2, wikipedia,tempfile,glob,shutil,unicodedata,goslate
 from gtts import gTTS
 
-#tinkerbell
 cl = LINETCR.LINE()
-cl.login(qr=True)
+cl.login(token="EpMBCWrJyEY84pz6ZPh6.j/tdO7lwB+C03rcYZKrK1G.AebIj6WozPHIk38ShOZdXsvO0UUy24tHlXh0Sr+lV00=")
 cl.loginResult()
-#vidia
+
 kt = LINETCR.LINE()
-kt.login(qr=True)
+kt.login(token="EpuLKrSmDJnELIumuPNe.GJq7GBzzMu2nGqyaPN/ipG./ywYL+v4EdoMkqCMm2cHZGAtzTgu/vtP513MwPYas1o=")
 kt.loginResult()
-#rosetta
+
 ks = LINETCR.LINE()
-ks.login(qr=True)
+ks.login(token="EpUvbMjt0rERCh2acH1b.lG3J7fc5sDPatBXqhRBQsW.yFJyvsvOeq7YTp8Fd1l3963wkGvohFISvGAeAB8NYAA=")
 ks.loginResult()
-#sirvelmist
+
 ki = LINETCR.LINE()
-ki.login(qr=True)
+ki.login(token="EpyyVNy5IxgQRjuEwyw5.Q0OoFYJHaR1Q19cGwwRPHq.hHSmJlN7lUkaxXCUmzeK689tt9rtE/c1VGKC5T6bvlc=")
 ki.loginResult()
-#fawn
+
 kk = LINETCR.LINE()
-kk.login(qr=True)
+kk.login(token="EpOcL4UZ1PxPIX37Ywh5.PT0fO6oRxm3RJkmvumHfXq.U8tN4bNCAc2t/mFXQci01dk3+1OoHlbTqFFvBpKpt88=")
 kk.loginResult()
-#iridessa
+
 kc = LINETCR.LINE()
-kc.login(qr=True)
+kc.login(token="EpMn3W7n2oHCKoNWpHhf.N9ifRDj66jRikuggJ75EpW.Pi4GDfQdnossK5ySdHuqvq7KNDS9tpp8T/nEsOMizxs=")
 kc.loginResult()
 
-#kicker ghost
-#kl = LINETCR.LINE()
-#kl.login(token="")
-#kl.loginResult()
 
-print "T̐̄̈́̀̏͏̷̡̡͞e̱͍͍̟̯̞͙̙͍̜̯̅̈̍ͧͨ̽ͬ̾͏̶̶̵͡͝à̸̛̛͉̗̦͈͇̩̿̑ͯ̀̋͌̎̐ͯ̏ͤ͢͠m̨̦͔̠͈̜̫̖̘̗̠̽ͤͬͮͩ̋̑̽͛̌̉̿́̕ ͈҉̵̶̧̛̛͠͝҉̀͢͏̀͞ ̶̨̧̛̰̞͍͖͓͂̈́̄̃̇̐̐́̕̕͢͝ ̸̸̶̴̵̶̛̛̝͓̹̩̠̯̠̦̈̋̂̀̚͘͢͠͝͠J̶̛̲͇̤͔̝͕͍̮̳͎ͥ̾̐̆ͥ̑ͦ̓̓ͩ̎́ͅ͏̡̧̢̛̕̕͡͞u̵̵̲̽͑̆͌ͭ҉̵̧̧͘͝҉ţ̸̴̨̳͓͇͈̝̣̄͑̏̋̆̀̕͡͞ḁ̧̧̧̛̘͕͍̣̣͖̝ͤ̇͊̽̃͒̚̕͢͟ͅw̴̴̬̠̞͍̫̩̗ͫ̎ͩ͌̐͗ͮ̾̓̾͂͟͢aͪͫ̆ͬ̎̽ͧ̽̀ͬ͛ͬ̅̚͏̡͢͡҉n̤͈̒̂ͫ̽̈́ͭ҉͏̸̶̸́̕͡"
+print "Anarchy Bots"
 reload(sys)
 sys.setdefaultencoding('utf-8')
-helpMessage= """\n
-=======================
-  ✩★BOT COMMANDS★✩
-=======================\n
-★ MODIFIER ★
-● Bot1 rename:[text]
-● Bot2 rename:[text]
-● Bot3 rename:[text]
-● Bot4 rename:[text]
-● Bot5 rename:[text]
-● Bot6 rename:[text]
-● All rename:[text]
-● Allbio:[text]
-● Bot1 clone @[name]
-● Bot2 clone @[name]
-● Bot3 clone @[name]
-● Bot4 clone @[name]
-● Bot5 clone @[name]
-● Bot6 clone @[name]
-● Comment:[text]
-● Message:[text]
-● Bot1-6 backup run
-● Bot1-6 backup
-● Group name:[text]
-
-★ PROMOTE/DEMOTE ★
-● Admin on @[name]
-● Expel on @[name]
-● Expelall
-● Set member:
-
-★ STEALING ★
-● Steal name    @[name]
-● Steal Bio     @[name]
-● Steal status  @[name]
-● Steal mid     @[name]
-● Steal contact @[name]
-● Steal cover   @[name]
-● Steal pict    @[name]
-● Steal group pict
-● Midpict:[mid]
-● Copy @[name]
-● Kembali ke asli
-
-★ GUARD MODE ★
-● Protect:low
-● Protect:hight
-
-★ MARK TO LIST ★
-● Ban    @[name]
-● Unban  @[name]
-● Ban group:
-● Del ban:
-● List ban group
-● Banned[send contact]
-● Unbanned[send contact]
-● Ban repeat @[name]
-● Blacklist all
-● Ban cek
-● Clear banlist
-● Mimic target @[name]
-● Mimic untarget @[name]
-● Add friend @[name]
-● Target @[name]
-● Del target @[name]
-● Target list
-
-★ INVITATION ★
-● Invite:[mid]
-● Invite user[contact]
-● Invite me
-● Team @join
-● Join group
-
-★ LEAVE GROUP ★
-● Bot2   @bye
-● Bot3   @bye
-● Bot4   @bye
-● Bot5   @bye
-● Bot6   @bye
-● Team   @bye
-● Center @bye
-● Bye allgroups[own]
-● Leave group:
-
-★ BOT AUTO SETTINGS ★
-● Auto join:on/off
-● Auto leave:on/off
-● Auto like:on/off
-● Welcome message:on/off
-● Auto notice:on/off
-● Blockinvite:on/off
-● Auto blockqr:on/off
-● Namelock:on/off
-● Mimic:on/off
-● Auto add:on/off
-● Check message
-● Add message:[text]
-● Comment:on/off
-● Add comment:[text]
-● Check comment
-● Backup:on/off
-● Gcancel:[number]
-● Update welcome:[text]
-● Check welcome message
-
-★ CANCEL MODE ★
-● Rejectall
-● Clean invites
-● Clear invites
-
-★ SUPRISE GIFT ★
-● gift1-15
-● Spam gift
-
-★ NOTIFICATION LIST ★
-● Group list
-● Banlist
-● Admin list
-● Settings
-● Ginfo
-● TL:[text]
-● Mimic list
-● Details grup:
-● Crash
-● Add all
-
-★ KICKER MODE ★
-● Cleanse
-● Vkick @
-● Nk [name]
-● Kick:[mid]
-● Purge
-● Ulti
-● Recover
-
-★ CHAT RELATED ★
-● Spamg[on/off][no][txt]
-● Spam add:[text]
-● Spam change:[text]
-● Spam start:[number]
-● Say [text]
-● Me
-● Speed
-● Debug speed
-● My mid
-● Gcreator
-● Halo
-● Bot contact
-● Bot mid
-● Creator
-● System
-● Iconfig
-● Kernel
-● Cpu
-● Responsename
-● Help
-● Mc:[mid]
-
-★ UTILITY ★
-● Lurking
-● Lurking result
-● Setlastpoint
-● Viewlastseen
-● Link open
-● Link close
-● Gurl
-● Remove chat
-● Bot restart
-
-★ CHAT RELATED ★
-● Lyric [][]
-● Music [][]
-● Wiki [text]
-● Vidio [text]
-● Youtube [text]
-● Instagram [text]
-● Translate-idn [text]
-● Translate-eng [text]
-● Translate-thai [text]
-● Translate-japan [text]
-● Emoji [expression]
-● Info @[name]
-● Ping
-● Time
-● apakah
-  [kerang ajaib]
-● Sticker [expression]
-● Mention all
-● /say
-● /say-en
-● /say-jp
-● Dosa @
-● /
-● Siapa
-
-★ BROADCASTING ★
-● Pm cast   [text]
-● Broadcast [text]
-● Spam @[name]
-
-★ special command ★
-● Turn off bots
-=======================
-SPECIAL THANKS TO:
-Ą̷̪͕̪̹̼̻̻͉̜̘̪̖̻ͨͧͨ́̓͂́ͩ̇̔ͥ̆́ͥ͡ȁ̼͖̤̹͍̞̥̪̘͓̙͔̯̟̯ͨ̂̆̈̓͏̴̷̨̧̢̨́́͢n̴̨̨̛̙̦̮͇̞͍͕̾͐͑ͧͨ̀͛̈̿͛̒͘̕͟͝͠͞ ͈̯̥͎̼̜̟̪̘̙̅ͮͥͥͮ͛̅̄̅̎͆͆̀͏̸̡̛́͜͢͞Ţ̸̷͚̟̭͓̣͉͔̖̎̍̊̉̋́̀͘͟͢͢͟͞͠͠e̴̴̛̟̙̠̫͖̻͚̱͔̲̜͙͙͖̞̩̣̽̊̉̐̀̏̽̅ͤͤͦ̚͢a̜̰͇̼͑̿̾̎ͥ̍͑ͭͭ̅ͪͭͥ̌͘͡͏͡m̴̢̙͚͗̈́̆͂ͤ͂̓ͫ̒͛͐ͬ̍͛̉̀̀̕͜͢͝͝͡ ̶̴̡̛̹̣̥̳̰̫͚̩̯̞̠͕͙͈̝͖ͩ̑ͧ̀̀̀͟͜͝҉̧Ḇ̸̶̧̗͎͉̦̫̮̜̜͖͚͓̟̖̱̅ͭ̆̿͑̾ͭ̑̅̌̚̕͜͜͢͟͠͝͠o̜̮͍̟̭͈̳̩̩̩̳̣͕̬ͬ͒ͣ̒̌͆̕ͅ҉͏̷̶̴̨̢̕͟͞͝͠t̶̶̷̡̨͕̫̎ͫ̒͐͝͡͠҉҉͏҉
-=======================
+helpMessage= """
+╔═══════════════════════
+║ 👑 PUBLIC COMMAND 👑
+╠═══════════════════════
+╠ 「 Me 」
+╠ 「 Myid 」
+╠ 「 Youtube 」
+╠ 「 Wiki 」
+╠ 「 Instagram 」
+╠ 「 Music 」
+╠ 「 Lyric 」
+╠ 「 Video 」
+╠ 「 Info @ 」
+╠ 「 Lurking 」
+╠ 「 Lurking Result 」
+╠ 「 Setlastpoint 」
+╠ 「 Viewlastseen 」
+╠ 「 Speed 」
+╠ 「 Gcreator 」
+╠ 「 Ginfo 」
+╠ 「 Creator 」
+╠ 「 Gname @ 」
+╠ 「 Gmid @ 」
+╠ 「 Gbio @ 」
+╠ 「 Gstatus @ 」
+╠ 「 Gcontact @ 」
+╠ 「 Gcover @ 」
+╠ 「 Gpict @ 」
+╠ 「 Ggroup 」
+╠ 「 Responsename 」
+╠ 「 Mention all 」
+╠═══════════════════════
+║ 👑 ADMIN COMMAND 👑
+╠═══════════════════════
+╠ 「 Buka 」
+╠ 「 Tutup 」
+╠ 「 Getqr 」
+╠ 「 Banlist 」
+╠ 「 Glist 」
+╠ 「 Adminlist 」
+╠ 「 Settings 」
+╠ 「 Nk [Name] 」
+╠ 「 Kick: [Mid」
+╠ 「 Clean invite 」
+╠ 「 Ban @ 」
+╠ 「 Unban @ 」
+╠ 「 Ban group: [Mid] 」
+╠ 「 Del group: [Mid] 」
+╠ 「 List ban group 」
+╠ 「 Clear banlist 」
+╠ 「 Bot mid 」
+╠ 「 Bot contact 」
+╠ 「 Auto join:on/off 」
+╠ 「 Auto leave:on/off 」
+╠ 「 Auto like:on/off 」
+╠ 「 Welcome message:on/off 」
+╠ 「 Update welcome:[Text] 」
+╠ 「 Check welcome 」
+╠ 「 Blockinvite:on/off 」
+╠ 「 Auto blockqr:on/off 」
+╠ 「 Namelock:on/off 」
+╠ 「 Backup:on/off 」
+╠ 「 Anarchy 」
+╠ 「 Anarchy @bye 」
+╠ 「 Runtime 」
+╠ 「 Bot restart 」
+╠═══════════════════════
+║ 👑 OWNER COMMAND 👑
+╠═══════════════════════
+╠ 「 Admin on @ 」
+╠ 「 Expel on @ 」
+╠ 「 Expelall 」
+╠ 「 Bot1-6 rename:[Text] 」
+╠ 「 Bot-6 clone @ 」
+╠ 「 Allname:[Text] 」
+╠ 「 Allbio:[Text] 」
+╠ 「 Adminlist 」
+╠ 「 Bot1-6 Backup 」
+╠ 「 Cleanse 」
+╠═══════════════════════
+║ Bot Protected 
+║ Creator Hanabi/Kuroko
+║ Team Anarchy
+╚═══════════════════════
 """
 KAC=[cl,ki,kk,kc,ks,kt]
 mid = cl.getProfile().mid
@@ -266,8 +137,8 @@ autoinvite = []
 autoleaveroom = []
 targets = []
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
-admin = ["ua045df9ee16399c865d9eb130d971a37"]
-owner = ["ua045df9ee16399c865d9eb130d971a37"]
+admin = [""]
+owner = [""]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -277,7 +148,7 @@ wait = {
     'autoAdd':False,
     'message':"Thanks for add Me",
     "lang":"JP",
-    "comment":"AutoLike by Daninoar",
+    "comment":"AutoLike by Hanabi",
     "welmsg":"welcome to group",
     "commentOn":True,
     "commentBlack":{},
@@ -1608,17 +1479,15 @@ def bot(op):
             elif msg.text is None:
                 return
             elif msg.text in ["Help","help"]:
-              if msg.from_ in admin:
                 print "\nHelp pick up..."
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to, helpMessage + datetime.today().strftime('%H:%M:%S'))
                 else:
                     cl.sendText(msg.to,helpt)
-            elif ("Group name:" in msg.text):
-              if msg.from_ in admin:
+            elif ("Gname:" in msg.text):
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
-                    X.name = msg.text.replace("Group name:","")
+                    X.name = msg.text.replace("Gname:","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
@@ -1694,7 +1563,6 @@ def bot(op):
                 
                 
             elif msg.text in ["Me"]:
-	      if msg.from_ in admin:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': msg.from_}
                 cl.sendMessage(msg)
@@ -1749,9 +1617,9 @@ def bot(op):
                 kt.sendMessage(msg)
              
 #==================================================
-            elif "All rename:" in msg.text:
+            elif "Allname:" in msg.text:
               if msg.from_ in owner:
-                string = msg.text.replace("All rename:","")
+                string = msg.text.replace("Allname:","")
                 if len(string.decode('utf-8')) <= 20:
                     profile = cl.getProfile()
                     profile.displayName = string
@@ -1855,7 +1723,6 @@ def bot(op):
                     kt.sendText(msg.to,"change name: "+string+"\nsucces")    
 #==================================================
             elif 'lyric ' in msg.text.lower():
-              if msg.from_ in admin:
                 try:
                     songname = msg.text.lower().replace('lyric ','')
                     params = {'songname': songname}
@@ -1871,7 +1738,6 @@ def bot(op):
                 except Exception as wak:
                         cl.sendText(msg.to, str(wak))
             elif 'wiki ' in msg.text.lower():
-              if msg.from_ in admin:
                   try:
                       wiki = msg.text.lower().replace("wiki ","")
                       wikipedia.set_lang("id")
@@ -1916,7 +1782,6 @@ def bot(op):
                     botKernel = subprocess.Popen(["cat","/proc/cpuinfo"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to, botKernel + "\n\n===SERVER INFO CPU===")
             elif 'instagram ' in msg.text.lower():
-              if msg.from_ in admin:
                 try:
                     instagram = msg.text.lower().replace("instagram ","")
                     html = requests.get('https://www.instagram.com/' + instagram + '/?')
@@ -1938,7 +1803,6 @@ def bot(op):
                 except Exception as njer:
                 	cl.sendText(msg.to, str(njer))
             elif 'music ' in msg.text.lower():
-              if msg.from_ in admin:
                 try:
                     songname = msg.text.lower().replace('music ','')
                     params = {'songname': songname}
@@ -1981,7 +1845,7 @@ def bot(op):
                     for _mid in gMembMids:
                         random.choice(KAC).cancelGroupInvitation(msg.to,[_mid])
                         cl.sendText(msg.to,"I pretended to cancel and canceled.")
-            elif 'link open' in msg.text.lower():
+            elif 'Buka' in msg.text.lower():
               if msg.from_ in admin:
                 if msg.toType == 2:
                     uye = random.choice(KAC)
@@ -1999,7 +1863,7 @@ def bot(op):
                         uye.sendText(msg.to,"Not for use less than group")
 #===========================================================================
          
-            elif 'link close' in msg.text.lower():
+            elif 'Tutup' in msg.text.lower():
               if msg.from_ in admin:
                 if msg.toType == 2:
                     uye = random.choice(KAC)
@@ -2018,7 +1882,6 @@ def bot(op):
 #============================================================
           
             elif msg.text.lower() == 'ginfo':
-              if msg.from_ in admin:
                 ginfo = cl.getGroup(msg.to)
                 try:
                     gCreator = ginfo.creator.displayName
@@ -2034,7 +1897,7 @@ def bot(op):
                 cl.sendText(msg.to,"[display name]\n" + str(ginfo.name) + "\n[Group Id]\n" + msg.to + "\n\n[Group Creator]\n" + gCreator + "\n\nmembers:" + str(len(ginfo.members)) + "\nInvitation:" + sinvitee + "")
                 cl.sendMessage(msg)
 #===============================================================
-            elif 'group list' in msg.text.lower():
+            elif 'Glist' in msg.text.lower():
               if msg.from_ in admin:
                 gs = cl.getGroupIdsJoined()
                 L = "『 Groups List 』\n"
@@ -2050,7 +1913,7 @@ def bot(op):
                                 cl.inviteIntoGroup(i,[msg.from_])
 			        cl.sendText(msg.to, "successfully invited you to all groups")
 
-            elif "Steal group pict" in msg.text:
+            elif "Ggroup" in msg.text:
               if msg.from_ in admin:
 					group = cl.getGroup(msg.to)
 					path = "http://dl.profile.line-cdn.net/" + group.pictureStatus
@@ -2064,7 +1927,6 @@ def bot(op):
                      pass
 #==================================================================
             elif "Steal bio" in msg.text:
-              if msg.from_ in admin:
                 key = eval(msg.contentMetadata["MENTION"])
                 key1 = key["MENTIONEES"][0]["M"]
                 contact = cl.getContact(key1)
@@ -2074,9 +1936,8 @@ def bot(op):
                 except:
                     cl.sendText(msg.to,contact.statusMessage)
             elif msg.text in ["Creator"]:
-              if msg.from_ in admin:
                 msg.contentType = 13
-                msg.contentMetadata = {'mid': 'ub76a0153a283da9a1443dfb043181335'}
+                msg.contentMetadata = {'mid': ''}
                 cl.sendMessage(msg)
                 cl.sendText(msg.to,"Itu Creator Saya ")
             elif "Admin on @" in msg.text:
@@ -2102,7 +1963,7 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,"Command denied.")
                     cl.sendText(msg.to,"owner permission required.")
-            elif msg.text.lower() == 'admin list':
+            elif msg.text.lower() == 'adminlist':
               if msg.from_ in admin:
                 if admin == []:
                        cl.sendText(msg.to,"The adminlist is empty")
@@ -2319,13 +2180,11 @@ def bot(op):
                  wait["winvite"] = True
                  cl.sendText(msg.to,"send contact")
 #============================================================
-            elif "Steal mid" in msg.text:
-              if msg.from_ in admin:
+            elif "Gmid" in msg.text:
                 key = eval(msg.contentMetadata["MENTION"])
                 key1 = key["MENTIONEES"][0]["M"]
                 cl.sendText(msg.to,"Mc: " + key1)
-            elif "Steal contact" in msg.text:
-              if msg.from_ in admin:
+            elif "Gcontact" in msg.text:
                 key = eval(msg.contentMetadata["MENTION"])
                 key1 = key["MENTIONEES"][0]["M"]                
                 mmid = cl.getContact(key1)
@@ -2665,7 +2524,7 @@ def bot(op):
             elif msg.text in ["Check comment"]:
               if msg.from_ in admin:
                 cl.sendText(msg.to,"message comment\n\n" + str(wait["comment"]))
-            elif msg.text in ["Gurl"]:
+            elif msg.text in ["Getqr"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     uye = random.choice(KAC)
@@ -2682,7 +2541,6 @@ def bot(op):
                         uye.sendText(msg.to,"Not for use less than group")
 #===========================================
             elif msg.text.lower() == 'responsename':
-              if msg.from_ in admin:
                 profile = cl.getProfile()
                 text = profile.displayName + ""
                 cl.sendText(msg.to, text)
@@ -2757,10 +2615,9 @@ def bot(op):
                     cl.sendText(msg.to,"Please turn on the name clock")
 
 #========================================
-            elif "Steal cover @" in msg.text:
-              if msg.from_ in admin:            
+            elif "Gcover @" in msg.text:            
                 print "[Command]dp executing"
-                _name = msg.text.replace("Steal cover @","")
+                _name = msg.text.replace("Gcover @","")
                 _nametarget = _name.rstrip('  ')
                 gs = cl.getGroup(msg.to)
                 targets = []
@@ -2780,7 +2637,6 @@ def bot(op):
                             pass
                 print "[Command]dp executed"
             elif "Midpict:" in msg.text:
-              if msg.from_ in admin:
                 umid = msg.text.replace("Midpict:","")
                 contact = cl.getContact(umid)
                 try:
@@ -2792,11 +2648,10 @@ def bot(op):
                 except Exception as error:
                     cl.sendText(msg.to,(error))
                     pass
-            elif "Steal pict " in msg.text:
-              if msg.from_ in admin:
+            elif "Gpict " in msg.text:
                 if msg.toType == 2:
                     msg.contentType = 0
-                    steal0 = msg.text.replace("Steal pict ","")
+                    steal0 = msg.text.replace("Gpict ","")
                     steal1 = steal0.lstrip()
                     steal2 = steal1.replace("@","")
                     steal3 = steal2.rstrip()
@@ -2951,11 +2806,11 @@ def bot(op):
                        print "success inv gCreator"
                     except:
                        pass
-            elif "Copy @" in msg.text:
+            elif "Clone @" in msg.text:
                 if msg.toType == 2:
                     if msg.from_ in admin:
                         print "[COPY] Ok"
-                        _name = msg.text.replace("Copy @","")
+                        _name = msg.text.replace("Clone @","")
                         _nametarget = _name.rstrip('  ')
                         gs = cl.getGroup(msg.to)
                         targets = []
@@ -2976,7 +2831,7 @@ def bot(op):
                                     cl.sendText(msg.to, "Sukses Copy Profile")
                                 except Exception as e:
                                     print e
-            elif msg.text in ["Kembali ke asli"]:
+            elif msg.text in ["Bakcup"]:
                 try:
                     cl.updateDisplayPicture(backup.pictureStatus)
                     cl.updateProfile(backup)
@@ -3105,6 +2960,7 @@ def bot(op):
 		    cl.sendText(msg.to, "Khusus Admin")
 #--------------------------------------------------------
             elif "Join group: " in msg.text:
+               if msg.from_ in owner:
 		ng = msg.text.replace("Join group: ","")
 		gid = cl.getGroupIdsJoined()
 		try:
@@ -3122,6 +2978,7 @@ def bot(op):
 		    cl.sendMessage(msg.to, str(e))
 #--------------------------------------------------------
 	    elif "Leave group: " in msg.text:
+               if msg.from_ in owner:
 		ng = msg.text.replace("Leave group: ","")
 		gid = cl.getGroupIdsJoined()
 		if msg.from_ in Creator:
@@ -3200,9 +3057,8 @@ def bot(op):
                                         gs.preventJoinByTicket(gs)
                                         cl.updateGroup(gs)
             elif msg.text in ["Speed","speed"]:
-	      if msg.from_ in admin:
                 start = time.time()
-                cl.sendText(msg.to, "loading...................")
+                cl.sendText(msg.to, "Tunggu")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sseconds" % (elapsed_time))
 		ki.sendText(msg.to, "%sseconds" % (elapsed_time))
@@ -3648,7 +3504,6 @@ def bot(op):
                             print e
 #=================================================
             elif msg.text == "Lurking":
-              if msg.from_ in admin:
                     cl.sendText(msg.to, "Set point.")
                     try:
                         del wait2['readPoint'][msg.to]
@@ -3662,7 +3517,6 @@ def bot(op):
                     wait2['ROM'][msg.to] = {}
                     print wait2
             elif msg.text == "Lurking result":
-              if msg.from_ in admin:
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -3678,7 +3532,7 @@ def bot(op):
 #========================================
 #---------------FUNGSI RATAIN GRUP TANPA KICK SESAMA BOT/Admin/Bots----------#
             elif "Cleanse" in msg.text:
-	      if msg.from_ in admin:
+	      if msg.from_ in owner:
                 if msg.toType == 2:
                     print "ok cleanse"
                     _name = msg.text.replace("Cleanse","")
@@ -3807,7 +3661,6 @@ def bot(op):
 #-----------------------------------------------
 #-----------------------------------------------
             elif 'apakah' in msg.text.lower():
-              if msg.from_ in admin:
                 tanya = msg.text.lower().replace("apakah","")
                 jawab = ("Ya","Tidak","Mungkin","Bisa jadi")
                 jawaban = random.choice(jawab)
@@ -3860,8 +3713,8 @@ def bot(op):
 						cl.sendText(manusia,(bctxt +"\n\n\nbroadcasted by:" + cl.getContact(msg.from_).displayName))
 										 
 #========================================
-            elif msg.text in ["Team @join"]:
-              if msg.from_ in admin:
+            elif msg.text in ["Anarchy"]:
+              if msg.from_ in owner or admin:
 					G = cl.getGroup(msg.to)
 					info = cl.getGroup(msg.to)
 					G.preventJoinByTicket = False
@@ -3886,8 +3739,8 @@ def bot(op):
 					cl.updateGroup(G)
 #=====================================================================================
           
-            elif msg.text in ["Bye allgroups"]:
-              if msg.from_ in admin:
+            elif msg.text in ["Byeall"]:
+              if msg.from_ in owner:
 				gid = cl.getGroupIdsJoined()
 				for i in gid:
 					cl.leaveGroup(i)
@@ -3900,8 +3753,8 @@ def bot(op):
 					ki.sendText(msg.to,"bye-bye")
 				else:
 					ki.sendText(msg.to,"He declined all invitations")
-            elif msg.text in ["Team @bye"]:
-              if msg.from_ in admin:
+            elif msg.text in ["Anarchy @bye"]:
+              if msg.from_ in owner or admin:
                 if msg.toType == 2:
                    X = cl.getGroup(msg.to)
                 try:
@@ -3946,7 +3799,6 @@ def bot(op):
 								
 #==========================================
             elif "youtube " in msg.text.lower():
-                if msg.from_ in admin:
                    query = msg.text.split(" ")
                    try:
                        if len(query) == 3:
@@ -3959,7 +3811,6 @@ def bot(op):
                    except Exception as e:
                        cl.sendText(msg.to, str(e))
             elif 'Vidio ' in msg.text:
-	      if msg.from_ in admin:
                 try:
                     textToSearch = (msg.text).replace('Vidio ', "").strip()
                     query = urllib.quote(textToSearch)
@@ -4204,7 +4055,6 @@ def bot(op):
                         #random.choice(KAC).cancelGroupInvitation(msg.to,[_mid])
                     #cl.sendText(msg.to,"Clear boss!!!")
             elif msg.text.lower() in ["mention all"]:
-              if msg.from_ in admin:
                 group = cl.getGroup(msg.to)
                 nama = [contact.mid for contact in group.members]
                 nm1, nm2, nm3, nm4, nm5, jml = [], [], [], [], [], len(nama)
